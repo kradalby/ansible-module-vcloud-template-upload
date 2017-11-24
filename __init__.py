@@ -18,7 +18,7 @@ def main():
             template_name=dict(required=True, type='str'),
             ova_file=dict(required=True, type='str'),
             overwrite=dict(default=False, type='bool'),
-            description=dict(default="", type='str'))
+            description=dict(default="", type='str')),
         supports_check_mode=True,
     )
 
@@ -50,12 +50,10 @@ def main():
         command_tokens.extend(['--overwrite'])
 
     if module.params['description']:
-        command_tokens.extend(['--annotation="{}"'.format(module.params['description'])])
+        command_tokens.extend(
+            ['--annotation="{}"'.format(module.params['description'])])
 
-    command_tokens.extend([
-        ova_file,
-        remote_path
-    ])
+    command_tokens.extend([ova_file, remote_path])
 
     ova_tool_result = module.run_command(command_tokens)
 
