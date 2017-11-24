@@ -8,18 +8,17 @@ import os.path
 def main():
     module = AnsibleModule(
         argument_spec=dict(
-            ovftool_path=dict(required=False, type='str'),
+            ovftool_path=dict(default="", type='str'),
             address=dict(required=True, type='str'),
             user=dict(required=True, type='str'),
             password=dict(required=True, type='str', no_log=True),
             virtual_datacenter=dict(required=True, type='str'),
             organization=dict(required=True, type='str'),
             catalog=dict(required=True, type='str'),
-            datastore=dict(required=True, type='str'),
             template_name=dict(required=True, type='str'),
             ova_file=dict(required=True, type='str'),
-            overwrite=dict(required=False, type='bool')),
-            description=dict(required=False, type='str')
+            overwrite=dict(default=False, type='bool')),
+            description=dict(default="", type='str')
         supports_check_mode=True,
     )
 
