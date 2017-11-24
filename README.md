@@ -1,4 +1,4 @@
-# ansible-module-ovftool-template-upload
+# ansible-module-vcloud-template-upload
 
 Ansible module for uploading templates (usually generated with packer) to VMware vCloud.
 
