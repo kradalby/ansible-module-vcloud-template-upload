@@ -55,6 +55,8 @@ def main():
 
     command_tokens.extend([ova_file, remote_path])
 
+    module.debug('Command tokens: {}'.format(command_tokens))
+
     ova_tool_result = module.run_command(command_tokens)
 
     if ova_tool_result[0] != 0:
