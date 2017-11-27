@@ -49,9 +49,9 @@ def main():
     if module.params['overwrite']:
         command_tokens.extend(['--overwrite'])
 
-    if module.params['description']:
-        command_tokens.extend(
-            ['--annotation="{}"'.format(module.params['description'])])
+        # if module.params['description']:
+    command_tokens.extend(
+        ['--annotation="{}"'.format(module.params['description'])])
 
     command_tokens.extend([ova_file, remote_path])
 
