@@ -51,12 +51,12 @@ def main():
 
         # if module.params['description']:
     command_tokens.extend(
-        # ['--annotation="{}"'.format(module.params['description'])])
-        ['--annotation="test"'])
+        ["--annotation='{}'".format(module.params['description'])])
 
     command_tokens.extend([ova_file, remote_path])
 
     module.debug('Command tokens: {}'.format(command_tokens))
+    print('Command tokens: {}'.format(command_tokens))
 
     ova_tool_result = module.run_command(command_tokens)
 
