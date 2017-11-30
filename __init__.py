@@ -43,7 +43,7 @@ def main():
     remote_path = vcloud_string + template_string
 
     command_tokens.extend([
-        '--annotation=""{}""'.format("test"),
+        '--annotation="{}"'.format("test"),
         # '--annotation=""{}""'.format(module.params['description']),
         '--acceptAllEulas',
     ])
