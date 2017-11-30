@@ -43,7 +43,8 @@ def main():
     remote_path = vcloud_string + template_string
 
     command_tokens.extend([
-        '--annotation=""{}""'.format(module.params['description']),
+        '--annotation=""{}""'.format("test"),
+        # '--annotation=""{}""'.format(module.params['description']),
         '--acceptAllEulas',
     ])
 
@@ -51,9 +52,6 @@ def main():
         command_tokens.extend(['--overwrite'])
 
     command_tokens.extend([ova_file, remote_path])
-
-    module.debug('Command tokens: {}'.format(command_tokens))
-    print('PRINT Command tokens: {}'.format(command_tokens))
 
     ova_tool_result = module.run_command(command_tokens)
 
